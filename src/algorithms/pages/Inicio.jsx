@@ -19,8 +19,8 @@ export const Inicio = () => {
 
           <article className="postcard light blue">
             
-            <a className="postcard__img_link" href="#">
-            <img className="postcard__img" src={ruta} alt="Image Title" />
+            <a className="postcard__img_link">
+            <img className="postcard__img" src={ruta} alt="Title" />
             </a>
             
             <div className="postcard__text t-dark">
@@ -45,8 +45,8 @@ export const Inicio = () => {
             </div>
           </article>
           <article className="postcard light blue">
-            <a className="postcard__img_link" href="#">
-              <img className="postcard__img" src={mochila} alt="Image Title" />	
+            <a className="postcard__img_link">
+              <img className="postcard__img" src={mochila} alt="Title" />	
             </a>
             <div className="postcard__text t-dark">
               <Link to={'/problemaDeLaMochila'}>
@@ -69,8 +69,8 @@ export const Inicio = () => {
             </div>
           </article>
           <article className="postcard light blue">
-            <a className="postcard__img_link" href="#">
-              <img className="postcard__img" src={maquina} alt="Image Title" />
+            <a className="postcard__img_link">
+              <img className="postcard__img" src={maquina} alt="Title" />
             </a>
             <div className="postcard__text t-dark">
               <Link to={'/reemplazoDeEquipo'}>
@@ -96,8 +96,8 @@ costo de mantenimiento, rendimiento del equipo y el valor de salvamento.</div>
             </div>
           </article>
           <article className="postcard light blue">
-            <a className="postcard__img_link" href="#">
-              <img className="postcard__img" src={arboles} alt="Image Title" />
+            <a className="postcard__img_link">
+              <img className="postcard__img" src={arboles} alt="Title" />
             </a>
             <div className="postcard__text t-dark">
               <Link to={'/arbolesBinariosDeBusquedaOptimos'}>
@@ -120,8 +120,8 @@ costo de mantenimiento, rendimiento del equipo y el valor de salvamento.</div>
             </div>
           </article>
           <article className="postcard light blue">
-            <a className="postcard__img_link" href="#">
-              <img className="postcard__img" src={deporte} alt="Image Title" />
+            <a className="postcard__img_link">
+              <img className="postcard__img" src={deporte} alt="Title" />
             </a>
             <div className="postcard__text t-dark">
               <Link to={'/seriesDeportivas'}>
@@ -144,8 +144,8 @@ costo de mantenimiento, rendimiento del equipo y el valor de salvamento.</div>
             </div>
           </article>
           <article className="postcard light blue">
-            <a className="postcard__img_link" href="#">
-              <img className="postcard__img" src={cubo} alt="Image Title" />	
+            <a className="postcard__img_link">
+              <img className="postcard__img" src={cubo} alt="Title" />	
             </a>
             <div className="postcard__text t-dark">
               <Link to={'/multiplicacionDeMatrices'}>

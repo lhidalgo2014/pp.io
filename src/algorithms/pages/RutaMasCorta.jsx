@@ -28,7 +28,7 @@ export const RutaMasCorta = () => {
       .map(() => new Array(largo).fill(0));
     for (let i = 0; i < largo; i++) {
       for (let j = 0; j < largo; j++) {
-        if (i == j) {
+        if (i === j) {
           newMatriz[i][j] = "0";
         } else {
           newMatriz[i][j] = "∞";
@@ -94,7 +94,7 @@ export const RutaMasCorta = () => {
   const TransformarMatriz = (Matriz) => {
     for (let i = 0; i < cantidadNodos; i++) {
       for (let j = 0; j < cantidadNodos; j++) {
-        if (Matriz[i][j] == "∞") {
+        if (Matriz[i][j] === "∞") {
           Matriz[i][j] = Number.MAX_SAFE_INTEGER;
         } else {
           Matriz[i][j] = parseInt(Matriz[i][j]);
@@ -179,8 +179,8 @@ export const RutaMasCorta = () => {
   const constructPath = (start,arrival) => {
 
     let pathResult = "";
-        if(parseInt(MatricesP[cantidadNodos][start][arrival])== 0) pathResult = "Ruta directa";
-        else if(parseInt(MatricesP[cantidadNodos][start][arrival]) == -1) pathResult = "No hay ruta";
+        if(parseInt(MatricesP[cantidadNodos][start][arrival])=== 0) pathResult = "Ruta directa";
+        else if(parseInt(MatricesP[cantidadNodos][start][arrival]) === -1) pathResult = "No hay ruta";
         else{
             pathResult = NodosActuales[start] + " " + constructPathAux(start, arrival);
         }
@@ -189,7 +189,7 @@ export const RutaMasCorta = () => {
   };
 
   const constructPathAux = (start,arrival) => {
-    if(parseInt(MatricesP[cantidadNodos][start][arrival])== 0){
+    if(parseInt(MatricesP[cantidadNodos][start][arrival])=== 0){
        return NodosActuales[arrival];
     }
     return constructPathAux(start, parseInt(MatricesP[cantidadNodos][start][arrival]) - 1) + " " + constructPathAux(parseInt(MatricesP[cantidadNodos][start][arrival]) - 1, arrival);

@@ -30,7 +30,7 @@ export const ProblemaDeLaMochila = () => {
       );
 
       res[i].quantity = parseInt(
-        document.getElementById("quantity-" + i.toString()).value == "Infinity"
+        document.getElementById("quantity-" + i.toString()).value === "Infinity"
           ? Number.MAX_SAFE_INTEGER
           : document.getElementById("quantity-" + i.toString()).value
       );
@@ -38,7 +38,7 @@ export const ProblemaDeLaMochila = () => {
         res[i].quantity = Infinity;
     });
     setObjetos(res);
-    if (Type == 0) {
+    if (Type === 0) {
       new Knapsack01(
         Matrix,
         Matrix2,
@@ -46,7 +46,7 @@ export const ProblemaDeLaMochila = () => {
         Matrix.length,
         res
       ).execute();
-    } else if (Type == 1) {
+    } else if (Type === 1) {
       new BoundedKnapsack(
         Matrix,
         Matrix2,
@@ -74,7 +74,7 @@ export const ProblemaDeLaMochila = () => {
   };
 
   const getQuantity = () => {
-    return Type == 0 || Type == 1 ? 1 : Infinity;
+    return Type === 0 || Type === 1 ? 1 : Infinity;
   };
 
   const addItem = () => {
@@ -107,7 +107,7 @@ export const ProblemaDeLaMochila = () => {
       SetCantidadObjetos(CantidadObjetos - 1);
       let res = JSON.parse(JSON.stringify(Objetos));
       res.pop();
-      var quantity = Type != 2 ? 1 : Infinity;
+      var quantity = Type !== 2 ? 1 : Infinity;
       res.forEach((item, i) => {
         res[i].quantity = quantity;
       });
@@ -141,7 +141,7 @@ export const ProblemaDeLaMochila = () => {
     unstable_batchedUpdates(() => {
       var Combo = document.getElementById("ComboTipo");
       var valorCombo = parseInt(Combo.options[Combo.selectedIndex].value);
-      var quantity = valorCombo != 2 ? 1 : Infinity;
+      var quantity = valorCombo !== 2 ? 1 : Infinity;
       let res = JSON.parse(JSON.stringify(Objetos));
       res.forEach((item) => {
         item.quantity = quantity;
@@ -152,19 +152,19 @@ export const ProblemaDeLaMochila = () => {
   };
 
   const GetTd = (i, j) => {
-    if (Type == 0 && Matrix2[i][j] == 0) {
+    if (Type === 0 && Matrix2[i][j] === 0) {
       return (
         <td style={{ backgroundColor: "red" }}>
           <p>{Matrix[i][j]}</p>
         </td>
       );
-    } else if (Type == 0 && Matrix2[i][j] != 0) {
+    } else if (Type === 0 && Matrix2[i][j] !== 0) {
       return (
         <td style={{ backgroundColor: "green" }}>
           <p>{Matrix[i][j]}</p>
         </td>
       );
-    } else if (Type != 0 && Matrix2[i][j] == 0) {
+    } else if (Type !== 0 && Matrix2[i][j] === 0) {
       return (
         <td style={{ backgroundColor: "red" }}>
           <p>
@@ -194,59 +194,12 @@ export const ProblemaDeLaMochila = () => {
     let j = Objetos.length - 1;
     let res = JSON.parse(JSON.stringify(Matriz));
     while (j >= 0) {
-      res[j].selected = Matrix2[i][j] != 0;
+      res[j].selected = Matrix2[i][j] !== 0;
       res[j].count = Matrix2[i][j];
       i = i - Matrix2[i][j] * res[j].cost;
       j -= 1;
     }
     return res;
-  };
-
-  const GuardarArchivo = () => {
-    let res = JSON.parse(JSON.stringify(Objetos));
-    if (getQuantity() === Infinity) {
-      res.forEach((item, i) => {
-        res[i].quantity = "Infinity";
-      });
-    }
-    res.forEach((item, i) => {
-      res[i].selected = false;
-      res[i].quantity = res[i].quantity.toString();
-      res[i].cost = res[i].cost.toString();
-      res[i].value = res[i].value.toString();
-    });
-    var element = document.createElement("a");
-    element.setAttribute(
-      "href",
-      "data:text/plain;charset=utf-8," +
-        encodeURIComponent(
-          JSON.stringify({
-            tipo: Type,
-            knapsacksize: CapacidadMochila,
-            items: res,
-          })
-        )
-    );
-    element.setAttribute("download", "mochila.json");
-    element.style.display = "none";
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-  };
-
-
-  const ReiniciarEstados = () => {
-    unstable_batchedUpdates(() => {
-      SetCantidadObjetos(1);
-      SetCapacidadMochila(1);
-      SetSolucion(false);
-      setObjetos([
-        { id: 0, cost: 0, value: 0, quantity: 1, selected: false, count: 0 },
-      ]);
-      SetMatrix([[0], [0]]);
-      SetMatrix2([[0], [0]]);
-      SetType(0);
-    });
   };
 
 
@@ -379,7 +332,7 @@ export const ProblemaDeLaMochila = () => {
                       className='form-control mt-2'
                       id={"quantity-" + i.toString()}
                       defaultValue={item.quantity}
-                      disabled={Type == 0 || Type == 2 ? true : false}
+                      disabled={Type === 0 || Type === 2 ? true : false}
                       style={{ width: "50px", display: "inline-block" }}
                     ></input>
 
@@ -403,7 +356,7 @@ export const ProblemaDeLaMochila = () => {
                           {" "}
                           {item.value}x<sub>{item.id}</sub>
                         </h6>
-                        {item.id != Objetos.length - 1 && (
+                        {item.id !== Objetos.length - 1 && (
                         <p className='text-dark mt-2' style={{ display: "inline-block" }}>+</p>
                         )}
                       </>
@@ -420,7 +373,7 @@ export const ProblemaDeLaMochila = () => {
                           {" "}
                           {item.cost}x<sub>{item.id}</sub>
                         </h6>
-                        {item.id != Objetos.length - 1 && (
+                        {item.id !== Objetos.length - 1 && (
                           <p className='text-dark mt-2' style={{ display: "inline-block" }}>+</p>
                         )}
                       </>
@@ -437,7 +390,7 @@ export const ProblemaDeLaMochila = () => {
                         {" "}
                         <h6 className='text-dark mt-2' style={{ display: "inline-block" }}>
                           x<sub>{item.id}</sub> = {item.count}
-                          {item.id != Objetos.length - 1 && (
+                          {item.id !== Objetos.length - 1 && (
                             <p className='text-dark mt-2' style={{ display: "inline-block" }}> , </p>
                           )}
                         </h6>

@@ -4,10 +4,10 @@ import {
     Inicio,
     RutaMasCorta,
     ProblemaDeLaMochila,
-    ReemplazoDeEquipo,
-    ArbolesBinariosDeBusquedaOptima,
+    //ReemplazoDeEquipo,
+    //ArbolesBinariosDeBusquedaOptima,
     SeriesDeportivas,
-    MultiplicacionDeMatrices
+    //MultiplicacionDeMatrices
 } from "../pages/index"
 
 export const AlgoRoutes = () => {

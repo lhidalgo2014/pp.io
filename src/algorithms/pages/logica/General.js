@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GeneralKnapsack = void 0;
 /*
@@ -30,13 +30,13 @@ var GeneralKnapsack = /** @class */ (function () {
             var i;
             for (i = 0; i < this.C; i++) {
                 if (this.items[j].cost > 0 && this.items[j].value > 0) { // We need value and cost
-                    if (i == 0) { // Si es la capacidad 0 no puedo llevar nada
+                    if (i === 0) { // Si es la capacidad 0 no puedo llevar nada
                         this.T[i][j] = 0;
                         this.X[i][j] = 0;
                     }
                     else { // Si la capacidad es mayor a 0 (nunca será menor)
                         if (this.items[j].quantity > 0) { // si aun quedan objetos de este tipo
-                            if (j == 0) { // Si estamos en la columna 0, es decir, primer objeto
+                            if (j === 0) { // Si estamos en la columna 0, es decir, primer objeto
                                 if ((i - this.items[j].cost) >= 0) { // Si me alcanza el costo del objeto actual con la capacidad que estoy analizando
                                     this.calculateValuesWhenFirstObject(i, j); // Se calcula cuántos se puede llevar según la capacidad y la cantidad de objetos
                                 }
@@ -80,7 +80,7 @@ var GeneralKnapsack = /** @class */ (function () {
         var x = 1;
         var pX = [this.T[i][j - 1]];
         var maxX = this.items[j].quantity;
-        while ((i - (x * this.items[j].cost) >= 0) && (x <= maxX || maxX == Infinity)) {
+        while ((i - (x * this.items[j].cost) >= 0) && (x <= maxX || maxX === Infinity)) {
             pX.push(x * Number(this.items[j].value) + Number(this.T[i - (x * this.items[j].cost)][j - 1]));
             x += 1;
         }
