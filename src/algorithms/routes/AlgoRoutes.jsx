@@ -4,7 +4,7 @@ import {
     Inicio,
     RutaMasCorta,
     ProblemaDeLaMochila,
-    //ReemplazoDeEquipo,
+    ReemplazoDeEquipo,
     //ArbolesBinariosDeBusquedaOptima,
     SeriesDeportivas,
     //MultiplicacionDeMatrices
@@ -20,7 +20,7 @@ export const AlgoRoutes = () => {
                     <Route path="inicio" element={<Inicio/>}/>
                     <Route path="rutaMasCorta" element={<RutaMasCorta/>}/>
                     <Route path="problemaDeLaMochila" element={<ProblemaDeLaMochila/>}/>
-                    <Route path="reemplazoDeEquipo" element={<SeriesDeportivas/>}/>
+                    <Route path="reemplazoDeEquipo" element={<ReemplazoDeEquipo/>}/>
                     <Route path="arbolesBinariosDeBusquedaOptimos" element={<SeriesDeportivas/>}/>
                     <Route path="seriesDeportivas" element={<SeriesDeportivas/>}/>
                     <Route path="multiplicacionDeMatrices" element={<SeriesDeportivas/>}/>
