@@ -183,7 +183,6 @@ export const ReemplazoDeEquipo = () => {
                 style={{display: "inline-block"}}
                 className="form-check-input mb-2 me-2"
                 type="checkbox"
-                id="flexSwitchCheckChecked"
                 checked={Ganancia}
                 onChange={() => setGanancia(!Ganancia)}
               ></input>

@@ -5,9 +5,9 @@ import {
     RutaMasCorta,
     ProblemaDeLaMochila,
     ReemplazoDeEquipo,
-    //ArbolesBinariosDeBusquedaOptima,
+    ArbolesBinariosDeBusquedaOptima,
     SeriesDeportivas,
-    //MultiplicacionDeMatrices
+    MultiplicacionDeMatrices
 } from "../pages/index"
 
 export const AlgoRoutes = () => {
@@ -21,9 +21,9 @@ export const AlgoRoutes = () => {
                     <Route path="rutaMasCorta" element={<RutaMasCorta/>}/>
                     <Route path="problemaDeLaMochila" element={<ProblemaDeLaMochila/>}/>
                     <Route path="reemplazoDeEquipo" element={<ReemplazoDeEquipo/>}/>
-                    <Route path="arbolesBinariosDeBusquedaOptimos" element={<SeriesDeportivas/>}/>
+                    <Route path="arbolesBinariosDeBusquedaOptimos" element={<ArbolesBinariosDeBusquedaOptima/>}/>
                     <Route path="seriesDeportivas" element={<SeriesDeportivas/>}/>
-                    <Route path="multiplicacionDeMatrices" element={<SeriesDeportivas/>}/>
+                    <Route path="multiplicacionDeMatrices" element={<MultiplicacionDeMatrices/>}/>
 
                     <Route path="/" element={<Navigate to="/inicio"/>} />
                 </Routes>
