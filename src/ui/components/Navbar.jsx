@@ -18,6 +18,17 @@ export const Navbar = () => {
                 >
                     Proyecto Investigacion de Operaciones
                 </Link>
+
+                <div className="navbar-collapse">
+                    <div className="navbar-nav">
+                    <Link 
+                        className="nav-item nav-link active"
+                        to="/"
+                    >
+                        Inicio
+                    </Link>
+                    </div>   
+                </div>                
                 {/*
                 <div className="navbar-collapse">
                     <div className="navbar-nav">
